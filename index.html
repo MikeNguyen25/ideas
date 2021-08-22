@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "112194154295974");
+        chatbox.setAttribute("attribution", "biz_inbox");
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v11.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+
+
+    <h1>Game 1: Random a number from 0 - 99 every 1s</h1>
+    <h2>Random kết quả cả ngày, so sánh thời điểm nào có tỷ lệ random ra kết quả cao nhất -> làm theo</h2>
+    <h2>Kết quả xổ số: số hiện ra lúc 14:50:01 hôm nay</h2>
+    <h2 id="game1">Random: now!</h2>
+
+    <h1>Game 2: Foreseen future</h1>
+    <form action="/submit" id="predictForm">
+        <input type="text" name="time" placeholder="Predict time">
+        <input type="text" name="predict" placeholder="Add your predict here">
+        <input type="submit" value="Enter your predict">
+    </form>
+    <ul id="listPredicts">
+        <li>Năm 202x: (Bitcoin?) Blockchain technology, Crypto technology </li>
+        <li>Năm 2025: AR apps phát triển, mở ra kỷ nguyên mới của Internet, IT</li>
+        <li>Năm 2030: Công nghiệp vũ trụ phát triển (du lịch vũ trụ, di cư)</li>
+        <li>Năm 2023: Số lượng người chơi Dota 2 giảm mạnh do bị kéo sang loại hình game tương tác khác đơn giản để tham
+            gia hơn
+        </li>
+        <li>Năm 2023: Phó thủ tướng VĐĐ lên làm thủ tướng, năm 2024: kinh tế Việt Nam cực thịnh, thị trường chứng khoán
+            Việt Nam cực thịnh, thời kỳ phát triển cực thịnh của công nghệ cao, công nghệ ứng dụng tại Việt Nam</li>
+    </ul>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
