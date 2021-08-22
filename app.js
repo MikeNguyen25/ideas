@@ -1,30 +1,17 @@
-const myGame = document.querySelector('#game1');
+const express = require('express');
+const app = express();
+const path = require('path');
 
-setInterval(() => {
-    let randomNum = Math.floor(Math.random() * 100);
-    myGame.innerText = `${randomNum}`
-}, 1000);
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'))
 
-const predictForm = document.querySelector("#predictForm");
+app.use(express.static(path.join(__dirname, 'public')))
 
-predictForm.addEventListener("submit", function (event) {
-    createNewPredict();
-    predictForm.children.predict.value = "";
-    predictForm.children.time.value = "";
-    event.preventDefault();
+app.get('/', (req, res) => {
+    res.render('index.ejs')
+});
+
+app.listen('3000', () => {
+    console.log('LISTENING ON PORT 3000')
 })
 
-function createNewPredict() {
-    // const container = document.createElement("ul");
-    const newpredictLine = document.createElement("li");
-    const newTime = document.createElement("span");
-    const newpredict = document.createElement("span");
-    // newTime.style.fontWeight = "800";
-    newTime.innerText = `${predictForm.children.time.value}: `
-    newpredict.innerText = `${predictForm.children.predict.value}`
-    const listPredicts = document.querySelector("#listPredicts");
-    // listPredicts.append(container);
-    listPredicts.append(newpredictLine);
-    newpredictLine.append(newTime);
-    newpredictLine.appendChild(newpredict);
-}
