@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
     res.render('index.ejs')
 });
 
-app.listen('80', () => {
-    console.log('LISTENING ON PORT 80')
+app.listen(process.env.PORT || 3000, () => {
+    console.log('LISTENING ON PORT custom')
 })
 
