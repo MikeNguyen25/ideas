@@ -46,28 +46,22 @@
 
 
 
-    <h1>Game 1: Random a number from 0 - 99 every 1s</h1>
-    <h2>Random kết quả cả ngày, so sánh thời điểm nào có tỷ lệ random ra kết quả cao nhất -> làm theo</h2>
-    <h2>Kết quả xổ số: số hiện ra lúc 14:50:01 hôm nay</h2>
+    <h1>Prediction 1: Foreseen Lotery result</h1>
+    <h2>We generated a random 2 ditgit number every second from 01/01/2018, then we collected the most frequent time in
+        day which gives
+        the number that match lotery result in the same day.
+    </h2>
+    <h2>Lottery result today: the number show up from 14:49:59 to 14:50:01 today</h2>
     <h2 id="game1">Random: now!</h2>
 
-    <h1>Game 2: Foreseen future</h1>
-    <!-- <form action="/submit" id="predictForm">
-        <input type="text" name="time" placeholder="Predict time">
-        <input type="text" name="predict" placeholder="Add your predict here">
-        <input type="submit" value="Enter your predict">
-    </form>
-    <ul id="listPredicts">
-        <li>Năm 202x: (Bitcoin?) Blockchain technology, Crypto technology </li>
-        <li>Năm 2025: AR apps phát triển, mở ra kỷ nguyên mới của Internet, IT</li>
-        <li>Năm 2030: Công nghiệp vũ trụ phát triển (du lịch vũ trụ, di cư)</li>
-        <li>Năm 2023: Số lượng người chơi Dota 2 giảm mạnh do bị kéo sang loại hình game tương tác khác đơn giản để tham
-            gia hơn
-        </li>
-        <li>Năm 2023: Phó thủ tướng VĐĐ lên làm thủ tướng, năm 2024: kinh tế Việt Nam cực thịnh, thị trường chứng khoán
-            Việt Nam cực thịnh, thời kỳ phát triển cực thịnh của công nghệ cao, công nghệ ứng dụng tại Việt Nam</li>
-    </ul> -->
-    <h1>ĐM TRÍ đánh BS ỉa chảy đang thắng tự throw thành thua, GG.</h1>
+    <h1>Prediction 2: Foreseen future</h1>
+    <ul>
+        <%for (let st of statements) {%>
+            <li>
+                <%= st.name %> stated that: <%= st.statement %>
+            </li>
+            <%}%>
+    </ul>
 
 
     <script src="/logic.js"></script>
