@@ -33,6 +33,12 @@ app.get('/', async (req, res) => {
     res.render('index.ejs', { statements })
 });
 
+
+app.get('/.well-known/pki-validation/C913407D7B54879DB40B2CC3801C7AAA.txt', (req, res) => {
+    res.sendFile(path.join(__dirname + '/C913407D7B54879DB40B2CC3801C7AAA.txt'))
+});
+
+
 app.listen(process.env.PORT || 3000, () => {
     console.log('LISTENING ON PORT custom')
 })

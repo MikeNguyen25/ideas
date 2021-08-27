@@ -4,7 +4,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 const mongoose = require('mongoose');
 
-const Statement = require('./models/statement')
+const Idea = require('./models/idea')
 const dbURL = process.env.DB_URL
 // 'mongodb://localhost:27017/stateGround'
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -16,18 +16,18 @@ mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
         console.log(err)
     })
 
-const statementList = [
+const ideaList = [
     {
         name: 'doctor_who',
         description: '2025: AR apps',
-        category: 'predict'
+        category: 'scam'
     }, {
         name: 'doctor_who',
-        description: '2023: Blockchain technology',
-        category: 'predict'
+        description: 'Năm 2023: Blockchain technology',
+        category: 'scam'
     }
 ]
 
-Statement.insertMany(statementList)
+Idea.insertMany(ideaList)
     .then(res => console.log(res))
     .catch(e => console.log(e))
