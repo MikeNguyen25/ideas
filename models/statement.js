@@ -5,7 +5,7 @@ const statementSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    statement: {
+    description: {
         type: String,
         required: true
     },
