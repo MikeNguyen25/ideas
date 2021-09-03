@@ -11,6 +11,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+        socket.on('random',(msg)=>{
+            const myGame = document.querySelector('#game1');
+            console.log(myGame)
+            if(myGame){myGame.innerText= msg}
+        })
+    </script>
 </head>
 
 <body>
@@ -60,22 +69,10 @@
         <input type="text" name="name" placeholder="Enter your name">
         <button type="submit"></button>
     </form>
-
-    <ul>
-        <%for (let st of statements) {%>
-            <li>
-                <b>
-                    <%= st.name %>
-                </b> stated that: <%= st.description %>
-            </li>
-            <%}%>
-    </ul>
-
     <h1>Game 3: Scam ideas</h1>
     <p> Create fake website sell Axie near-free</p>
 
 
-    <script src="/logic.js"></script>
 </body>
 
 </html>
