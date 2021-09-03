@@ -44,8 +44,6 @@
     </script>
 
 
-
-
     <h1>Game 1: Foreseen Lotery result</h1>
     <p>We generated a random 2 ditgit number every second from 01/01/2018, then we collected the most frequent time in
         day which gives
@@ -65,12 +63,12 @@
 
     <ul>
         <%for (let st of statements) {%>
-        <li>
-            <b>
-                <%= st.name %>
-            </b> stated that: <%= st.description %>
-        </li>
-        <%}%>
+            <li>
+                <b>
+                    <%= st.name %>
+                </b> stated that: <%= st.description %>
+            </li>
+            <%}%>
     </ul>
 
     <h1>Game 3: Scam ideas</h1>

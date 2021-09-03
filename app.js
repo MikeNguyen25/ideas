@@ -7,8 +7,10 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+// const io = require('socket.io')(Server)
 
-const Statement = require('./models/statement')
+const Statement = require('./models/statement');
+const { Server } = require('http');
 const dbURL = process.env.DB_URL
 // 'mongodb://localhost:27017/stateGround'
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -32,7 +34,6 @@ app.get('/', async (req, res) => {
     console.log(statements)
     res.render('index.ejs', { statements })
 });
-
 
 app.get('/.well-known/pki-validation/C913407D7B54879DB40B2CC3801C7AAA.txt', (req, res) => {
     res.sendFile(path.join(__dirname + '/C913407D7B54879DB40B2CC3801C7AAA.txt'))
